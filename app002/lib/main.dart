@@ -85,7 +85,7 @@ class App002 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ListTile(
-                    title: Text("Oso"),
+                    title: Text("Oso Polar"),
                     subtitle: Text("Mamífero grande y fuerte"),
                   ),
 
@@ -150,7 +150,7 @@ class App002 extends StatelessWidget {
                   ),
 
                   Image.network(
-                    "https://source.unsplash.com/600x400/?white-wolf",
+                    "https://images.unsplash.com/photo-1641392924934-17fd6c260a24?fm=jpg&q=60&w=3000&auto=format&fit=crop",
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
@@ -172,7 +172,26 @@ class App002 extends StatelessWidget {
                   ),
 
                   Image.network(
-                    "https://source.unsplash.com/600x400/?horse",
+                    "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800",
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ],
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListTile(
+                    title: Text("León"),
+                    subtitle: Text("Animal fuerte y veloz Rey de la selva"),
+                  ),
+
+                  Image.network(
+                    "https://images.unsplash.com/photo-1546182990-dffeafbe841d",
                     height: 200,
                     width: double.infinity,
                     fit: BoxFit.cover,
