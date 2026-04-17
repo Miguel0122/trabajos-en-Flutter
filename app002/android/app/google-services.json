@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "292971925218",
+    "project_id": "galeria-animales",
+    "storage_bucket": "galeria-animales.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292971925218:android:2b9644157631ab07fa98bb",
+        "android_client_info": {
+          "package_name": "com.example.app002"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9FXWNXv82qlzUVqpE3IUKA1o0c6K4ivA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

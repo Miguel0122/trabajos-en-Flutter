@@ -1,207 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+import 'screens/login_screen.dart';
 
-void main(List<String> args) {
-  runApp(App002());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(const MyApp());
 }
 
-class App002 extends StatelessWidget {
-  const App002({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Uso Scaffold",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Lista de Animales"),
-          backgroundColor: Colors.amber,
-        ),
-
-        body: ListView(
-          children: [
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Perro"),
-                    subtitle: Text("Animal doméstico muy fiel"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1543466835-00a7907e9de1",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Gato"),
-                    subtitle: Text("Animal independiente y curioso"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Tigre"),
-                    subtitle: Text("Felino salvaje muy poderoso"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1549480017-d76466a4b7e8",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Oso Polar"),
-                    subtitle: Text("Mamífero grande y fuerte"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1589656966895-2f33e7653819",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Zorro"),
-                    subtitle: Text("Animal muy inteligente y rápido"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1474511320723-9a56873867b5",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Panda"),
-                    subtitle: Text("Oso originario de China"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Lobo"),
-                    subtitle: Text("Animal salvaje que vive en manadas"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1641392924934-17fd6c260a24?fm=jpg&q=60&w=3000&auto=format&fit=crop",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("Caballo"),
-                    subtitle: Text(
-                      "Animal fuerte y veloz usado por el ser humano",
-                    ),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-            Card(
-              margin: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ListTile(
-                    title: Text("León"),
-                    subtitle: Text("Animal fuerte y veloz Rey de la selva"),
-                  ),
-
-                  Image.network(
-                    "https://images.unsplash.com/photo-1546182990-dffeafbe841d",
-                    height: 200,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+      title: 'Galería de Animales',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+        useMaterial3: true,
       ),
+      home: const LoginScreen(),
     );
   }
 }
